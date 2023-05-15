@@ -1,0 +1,26 @@
+.container > input {
+    width: 100%;
+    border: 1px solid var(--cool-gray);
+    outline-color: var(--purplish-blue);
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 3px;
+    color: var(--marine-blue);
+    font-size: calc(15rem / 16);
+    font-weight: var(--medium-font);
+    transition: border-color 0.5s ease-in-out;
+}
+
+.container > input:hover {
+    border-color: var(--purplish-blue);
+}
+
+.container > input::placeholder {
+    color: var(--cool-gray);
+}
+
+.label-container > label {
+    color: var(--marine-blue);
+    font-size: calc(14rem / 16);
+    font-weight: var(--medium-font);
+}
