@@ -10,6 +10,8 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:react/jsx-runtime',
         'plugin:react-hooks/recommended',
+        'plugin:import/recommended',
+        'plugin:import/typescript',
         'prettier',
         'prettier/prettier',
         'plugin:prettier/recommended',
@@ -24,10 +26,23 @@ module.exports = {
     plugins: [
         'react-refresh',
         '@typescript-eslint',
+        'import',
         'jsx-a11y',
         'react',
         'prettier',
     ],
+    settings: {
+        'import/parsers': {
+            '@typescript-eslint/parser': ['.ts', '.tsx'],
+        },
+        'import/resolver': {
+            typescript: { alwaysTryTypes: true },
+            project: './tsconfig.json',
+        },
+        react: {
+            version: 'detect',
+        },
+    },
     rules: {
         'react-refresh/only-export-components': 'warn',
         'prettier/prettier': [
@@ -74,5 +89,11 @@ module.exports = {
             'warn',
             { validStrategies: ['ternary', 'coerce'] },
         ],
+        'import/no-unresolved': 'error',
+        'import/no-cycle': 'error',
+        'import/first': 'error',
+        'import/group-exports': 'error',
+        'import/newline-after-import': 'error',
+        'import/order': 'error',
     },
 };
