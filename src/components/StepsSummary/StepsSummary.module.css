@@ -1,0 +1,9 @@
+.steps {
+    display: flex;
+    justify-content: center;
+    column-gap: 5%;
+    padding-top: calc(25rem / 16);
+    height: calc(178rem / 16);
+    background-image: url('../../assets/images/bg-sidebar-mobile.svg');
+    background-size: cover;
+}

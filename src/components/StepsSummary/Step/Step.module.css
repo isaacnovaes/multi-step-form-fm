@@ -1,0 +1,19 @@
+.step {
+    width: calc(35rem / 16);
+    height: calc(35rem / 16);
+    border: calc(1rem / 16) solid var(--pastel-blue);
+    background-color: transparent;
+    outline-color: transparent;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    color: var(--white);
+    font-weight: var(--big-font);
+    transition: 0.5s ease;
+}
+
+.step.selected {
+    background-color: var(--pastel-blue);
+    outline-color: var(--pastel-blue);
+    color: var(--marine-blue);
+}
