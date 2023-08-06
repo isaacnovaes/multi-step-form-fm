@@ -1,12 +1,12 @@
 import { createContext, useReducer } from 'react';
 
-interface PersonalInfoState {
+export interface PersonalInfoState {
     name: string;
     address: string;
     phone: string;
 }
 
-const initialState: PersonalInfoState = { name: '', address: '', phone: '' };
+const INITIAL_STATE: PersonalInfoState = { name: '', address: '', phone: '' };
 
 type PersonalInfoDispatchAction =
     | {
@@ -22,7 +22,7 @@ type PersonalInfoDispatchAction =
           newPhone: string;
       };
 
-const PersonalInfoContext = createContext<PersonalInfoState>(initialState);
+const PersonalInfoContext = createContext<PersonalInfoState>(INITIAL_STATE);
 const PersonalInfoDispatchContext = createContext<React.Dispatch<PersonalInfoDispatchAction>>(
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     () => {}
@@ -50,7 +50,7 @@ interface Props {
 }
 
 const PersonalInfoProvider = (props: Props) => {
-    const [state, dispatch] = useReducer(personalInfoReducer, initialState);
+    const [state, dispatch] = useReducer(personalInfoReducer, INITIAL_STATE);
     return (
         <PersonalInfoContext.Provider value={state}>
             <PersonalInfoDispatchContext.Provider value={dispatch}>

@@ -2,7 +2,7 @@ import styles from './Step.module.css';
 
 interface Props {
     step: number;
-    selected?: boolean;
+    selected: boolean;
 }
 
 const Step = ({ selected = false, step }: Props) => {

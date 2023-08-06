@@ -5,7 +5,6 @@ import ProIcon from '../../assets/images/icon-pro.svg';
 import type { BillingPlanPeriod, PlanModel, PlanTypes } from '../types/global';
 import MonthBillingSwitch from './MonthBillingSwitch/MonthBillingSwitch';
 import Plan from './Plan/Plan';
-// import styles from './PlanSelection.module.css';
 
 const ICONS: Record<PlanTypes, { src: string; alt: string }> = {
     arcade: { src: ArcadeIcon, alt: 'game icon' },

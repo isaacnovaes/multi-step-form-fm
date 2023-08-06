@@ -2,7 +2,7 @@ import type { BillingPlanPeriod } from '../../types/global';
 import styles from './MonthBillingSwitch.module.css';
 
 interface Props {
-    billingTime: 'monthly' | 'yearly';
+    billingTime: BillingPlanPeriod;
     setBillingType: React.Dispatch<React.SetStateAction<BillingPlanPeriod>>;
 }
 
@@ -21,7 +21,9 @@ const MonthBillingSwitch = (props: Props) => {
                 className={styles['switch-container']}
                 type='button'
                 onClick={() => {
-                    setBillingType((curr) => (curr === 'monthly' ? 'yearly' : 'monthly'));
+                    setBillingType(
+                        (curr): BillingPlanPeriod => (curr === 'monthly' ? 'yearly' : 'monthly')
+                    );
                 }}
             >
                 <span

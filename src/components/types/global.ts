@@ -1,5 +1,6 @@
 type BillingPlanPeriod = 'monthly' | 'yearly';
 type PlanTypes = 'arcade' | 'advanced' | 'pro';
+type Step = 1 | 2 | 3 | 4;
 
 interface PlanModel {
     type: PlanTypes;
@@ -8,4 +9,4 @@ interface PlanModel {
     freeMonthPeriod: string;
 }
 
-export type { BillingPlanPeriod, PlanModel, PlanTypes };
+export type { BillingPlanPeriod, PlanModel, PlanTypes, Step };

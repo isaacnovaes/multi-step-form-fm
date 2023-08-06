@@ -11,6 +11,11 @@
     transition: border-color 0.5s ease-in-out;
 }
 
+.error > input {
+    outline-color: var(--strawberry-red);
+    border-color: var(--strawberry-red);
+}
+
 .container > input:hover {
     border-color: var(--purplish-blue);
 }
@@ -19,8 +24,18 @@
     color: var(--cool-gray);
 }
 
+.label-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .label-container > label {
     color: var(--marine-blue);
     font-size: calc(14rem / 16);
     font-weight: var(--medium-font);
+}
+
+.label-container > span {
+    color: var(--strawberry-red);
+    font-size: calc(14rem / 16);
 }
