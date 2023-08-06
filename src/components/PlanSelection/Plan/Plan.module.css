@@ -1,0 +1,26 @@
+.plan-container {
+    padding: 10px;
+    outline: 1px solid hsl(240, 3%, 89%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.plan-container:hover {
+    outline-color: hsl(246, 31%, 56%);
+    cursor: pointer;
+}
+
+.plan-container.selected {
+    background-color: hsl(230, 75%, 98%);
+    outline-color: hsl(246, 31%, 56%);
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.plan-description {
+}

@@ -24,12 +24,7 @@ const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
                 <label htmlFor={inputId}>{label}</label>
                 {error ? <span>This field is required</span> : null}
             </div>
-            <input
-                ref={ref}
-                id={inputId}
-                onChange={onChangeHandler}
-                {...rest}
-            />
+            <input ref={ref} id={inputId} onChange={onChangeHandler} {...rest} />
         </div>
     );
 });

@@ -23,14 +23,12 @@ type PersonalInfoDispatchAction =
       };
 
 const PersonalInfoContext = createContext<PersonalInfoState>(initialState);
-const PersonalInfoDispatchContext = createContext<
-    React.Dispatch<PersonalInfoDispatchAction>
->(() => {});
+const PersonalInfoDispatchContext = createContext<React.Dispatch<PersonalInfoDispatchAction>>(
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    () => {}
+);
 
-const personalInfoReducer = (
-    state: PersonalInfoState,
-    action: PersonalInfoDispatchAction
-) => {
+const personalInfoReducer = (state: PersonalInfoState, action: PersonalInfoDispatchAction) => {
     switch (action.type) {
         case 'update-name': {
             return { ...state, name: action.newName };
@@ -42,9 +40,7 @@ const personalInfoReducer = (
             return { ...state, phone: action.newPhone };
         }
         default:
-            new Error(
-                `Something went wrong. This action type is not handled by StepContext.`
-            );
+            new Error(`Something went wrong. This action type is not handled by StepContext.`);
             return state;
     }
 };
@@ -64,8 +60,4 @@ const PersonalInfoProvider = (props: Props) => {
     );
 };
 
-export {
-    PersonalInfoProvider,
-    PersonalInfoContext,
-    PersonalInfoDispatchContext,
-};
+export { PersonalInfoProvider, PersonalInfoContext, PersonalInfoDispatchContext };

@@ -1,0 +1,48 @@
+.month-billing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: calc(30rem / 16);
+    padding: 12px 0;
+    background-color: hsl(230, 75%, 98%);
+    border-radius: 5px;
+}
+
+.month-billing {
+    font-size: calc(15rem / 16);
+    color: var(--cool-gray);
+    font-weight: var(--medium-font);
+    transition: color 0.3s ease;
+}
+
+.month-billing.selected-billing {
+    color: var(--marine-blue);
+}
+
+.switch-container {
+    width: calc(40rem / 16);
+    height: calc(20rem / 16);
+    position: relative;
+    background-color: var(--marine-blue);
+    border-radius: 40px;
+    cursor: pointer;
+    outline-color: var(--marine-blue);
+    border-color: var(--marine-blue);
+    outline-offset: 4px;
+}
+
+.switch {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: calc(12rem / 16);
+    height: calc(12rem / 16);
+    background-color: var(--white);
+    border-radius: 50%;
+    transform: translateX(-16px) translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.switch.move {
+    transform: translateX(3px) translateY(-50%);
+}

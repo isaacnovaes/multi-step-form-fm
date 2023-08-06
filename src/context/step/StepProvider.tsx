@@ -8,9 +8,8 @@ type StepDispatchAction =
     | { type: 'go-to'; step: number };
 
 const StepContext = createContext<number>(1);
-const StepDispatchContext = createContext<React.Dispatch<StepDispatchAction>>(
-    () => {}
-);
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const StepDispatchContext = createContext<React.Dispatch<StepDispatchAction>>(() => {});
 
 const stepReducer = (step: number, action: StepDispatchAction) => {
     switch (action.type) {
@@ -24,9 +23,7 @@ const stepReducer = (step: number, action: StepDispatchAction) => {
             return action.step;
         }
         default:
-            new Error(
-                `Something went wrong. This action type is not handled by StepContext.`
-            );
+            new Error(`Something went wrong. This action type is not handled by StepContext.`);
             return step;
     }
 };

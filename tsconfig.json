@@ -20,11 +20,6 @@
         "noFallthroughCasesInSwitch": true,
         "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
-    "include": [
-        "src",
-        "src/cssModuleTypeDeclaration.d.ts",
-        "./.eslintrc.cjs",
-        "./vite.config.ts"
-    ],
+    "include": ["src", "src/cssModuleTypeDeclaration.d.ts", "./.eslintrc.cjs", "./vite.config.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

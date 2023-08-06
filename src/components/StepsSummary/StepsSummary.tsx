@@ -9,11 +9,7 @@ const StepsSummary = () => {
     return (
         <div className={styles.steps}>
             {STEPS.map((stepNumber) => (
-                <Step
-                    key={stepNumber}
-                    step={stepNumber}
-                    selected={stepNumber === currentStep}
-                />
+                <Step key={stepNumber} step={stepNumber} selected={stepNumber === currentStep} />
             ))}
         </div>
     );

@@ -1,7 +1,7 @@
 .step {
-    width: calc(35rem / 16);
-    height: calc(35rem / 16);
-    border: calc(1rem / 16) solid var(--pastel-blue);
+    width: calc(33rem / 16);
+    height: calc(33rem / 16);
+    border: calc(1rem / 16) solid hsl(208, 100%, 87%);
     background-color: transparent;
     outline-color: transparent;
     border-radius: 50%;
@@ -13,7 +13,7 @@
 }
 
 .step.selected {
-    background-color: var(--pastel-blue);
-    outline-color: var(--pastel-blue);
+    background-color: hsl(208, 100%, 87%);
+    outline-color: hsl(208, 100%, 87%);
     color: var(--marine-blue);
 }

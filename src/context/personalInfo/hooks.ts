@@ -1,8 +1,5 @@
 import { useContext } from 'react';
-import {
-    PersonalInfoContext,
-    PersonalInfoDispatchContext,
-} from './PersonalInfoProvider';
+import { PersonalInfoContext, PersonalInfoDispatchContext } from './PersonalInfoProvider';
 
 const usePersonalInfo = () => {
     const personalInfo = useContext(PersonalInfoContext);

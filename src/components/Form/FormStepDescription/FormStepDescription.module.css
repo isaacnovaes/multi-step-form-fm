@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: calc(5rem / 16);
+    margin-top: calc(6rem / 16);
+}
+
+.container > h1 {
+    color: var(--marine-blue);
+    font-weight: var(--big-font);
+
+    font-size: calc(25rem / 16);
+}
+
+.container > h2 {
+    color: var(--cool-gray);
+    font-size: calc(17rem / 16);
+    font-weight: var(--small-font);
+}

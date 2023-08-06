@@ -1,8 +1,5 @@
 import { useCallback } from 'react';
-import {
-    usePersonalInfo,
-    usePersonalInfoDispatch,
-} from '../../../context/personalInfo/hooks';
+import { usePersonalInfo, usePersonalInfoDispatch } from '../../../context/personalInfo/hooks';
 import TextInput from '../Input/TextInput';
 import styles from './PersonalInfo.module.css';
 

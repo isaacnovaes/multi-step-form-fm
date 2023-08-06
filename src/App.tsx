@@ -1,9 +1,12 @@
-import desktop from './assets/images/bg-sidebar-desktop.svg';
+import styles from './App.module.css';
+import Form from './components/Form/Form';
+import StepsSummary from './components/StepsSummary/StepsSummary';
 
 function App() {
     return (
-        <div>
-            <img src={desktop} alt='alt text' />
+        <div className={styles['global-container']}>
+            <StepsSummary />
+            <Form />
         </div>
     );
 }

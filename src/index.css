@@ -47,7 +47,7 @@ html:focus-within {
 }
 
 body {
-    min-height: 100vh;
+    background-color: var(--light-blue);
 }
 
 ul {
@@ -75,7 +75,7 @@ textarea {
 
 button:focus,
 button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    outline: calc(4rem / 16) auto -webkit-focus-ring-color;
 }
 
 /* Remove all animations, transitions, and smooth scroll for people that prefer not to see them */

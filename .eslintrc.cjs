@@ -1,5 +1,5 @@
 module.exports = {
-    env: { browser: true, es2020: true },
+    env: { browser: true, es2020: true, node: true },
     root: true,
     extends: [
         'eslint:recommended',
@@ -21,16 +21,10 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: ['./tsconfig.json'],
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         tsconfigRootDir: __dirname,
     },
-    plugins: [
-        'react-refresh',
-        '@typescript-eslint',
-        'import',
-        'jsx-a11y',
-        'react',
-        'prettier',
-    ],
+    plugins: ['react-refresh', '@typescript-eslint', 'import', 'jsx-a11y', 'react', 'prettier'],
     settings: {
         'import/parsers': {
             '@typescript-eslint/parser': ['.ts', '.tsx'],
@@ -47,7 +41,7 @@ module.exports = {
         'react-refresh/only-export-components': 'warn',
         'prettier/prettier': [
             'warn',
-            { endOfLine: 'auto', singleQuote: true, jsxSingleQuote: true },
+            { endOfLine: 'auto', singleQuote: true, jsxSingleQuote: true, printWidth: 100 },
         ],
         'no-duplicate-imports': ['warn', { includeExports: true }],
         'no-template-curly-in-string': 'warn',
@@ -85,10 +79,7 @@ module.exports = {
         'react/no-unused-state': 'warn',
         'react/self-closing-comp': 'warn',
         'react/jsx-no-constructed-context-values': 'warn',
-        'react/jsx-no-leaked-render': [
-            'warn',
-            { validStrategies: ['ternary', 'coerce'] },
-        ],
+        'react/jsx-no-leaked-render': ['warn', { validStrategies: ['ternary', 'coerce'] }],
         'import/no-unresolved': 'error',
         'import/no-cycle': 'error',
         'import/first': 'error',

@@ -12,7 +12,7 @@
         "lint-css": "stylelint **/*.css",
         "format": "prettier --write .",
         "check": "prettier --check .",
-        "check-conflict": "eslint-config-prettier **/*"
+        "check-conflict": "eslint-config-prettier ./"
     },
     "dependencies": {
         "react": "^18.2.0",
