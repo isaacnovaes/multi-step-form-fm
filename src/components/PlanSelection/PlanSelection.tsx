@@ -2,6 +2,8 @@ import { useState } from 'react';
 import AdvancedIcon from '../../assets/images/icon-advanced.svg';
 import ArcadeIcon from '../../assets/images/icon-arcade.svg';
 import ProIcon from '../../assets/images/icon-pro.svg';
+import { useStepDispatch } from '../../context/step/hooks';
+import FormFooter from '../Form/FormFooter/FormFooter';
 import type { BillingPlanPeriod, PlanModel, PlanTypes } from '../types/global';
 import MonthBillingSwitch from './MonthBillingSwitch/MonthBillingSwitch';
 import Plan from './Plan/Plan';
@@ -35,12 +37,24 @@ const PLANS: PlanModel[] = [
 
 const PlanSelection = () => {
     const [billingTime, setBillingType] = useState<BillingPlanPeriod>('monthly');
+    const stepDispatch = useStepDispatch();
+
+    const onNextStepHandler: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+        stepDispatch({ type: 'go-forward' });
+    };
+
     return (
         <div>
             {PLANS.map((plan) => (
                 <Plan key={plan.type} {...ICONS[plan.type]} {...plan} />
             ))}
             <MonthBillingSwitch billingTime={billingTime} setBillingType={setBillingType} />
+            <FormFooter
+                onSubmit={onNextStepHandler}
+                onGoBackHandler={() => {
+                    stepDispatch({ type: 'go-backwards' });
+                }}
+            />
         </div>
     );
 };

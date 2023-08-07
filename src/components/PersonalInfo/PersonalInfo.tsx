@@ -19,7 +19,6 @@ const PersonalInfo = () => {
 
     const onNameChange = useCallback(
         (newName: string) => {
-            console.log('render name');
             personalInfoDispatch({ type: 'update-name', newName });
         },
         [personalInfoDispatch]
@@ -27,7 +26,6 @@ const PersonalInfo = () => {
 
     const onEmailChange = useCallback(
         (newAddress: string) => {
-            console.log('render email');
             personalInfoDispatch({
                 type: 'update-address',
                 newAddress,
@@ -38,7 +36,6 @@ const PersonalInfo = () => {
 
     const onPhoneChange = useCallback(
         (newPhone: string) => {
-            console.log('render phone');
             personalInfoDispatch({
                 type: 'update-phone',
                 newPhone,
@@ -48,8 +45,6 @@ const PersonalInfo = () => {
     );
 
     const onNextStepHandler: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-        e.preventDefault();
-
         const errors: typeof inputsError = { name: false, address: false, phone: false };
 
         errors.name = name === '';

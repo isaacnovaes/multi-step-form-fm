@@ -20,10 +20,10 @@ const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
     };
 
     return (
-        <div className={`${styles.container} ${error ? styles.error : ''}`}>
+        <div className={`${styles.container} ${error ? styles.containerError : ''}`}>
             <div className={styles['label-container']}>
                 <label htmlFor={inputId}>{label}</label>
-                {error ? <span>This field is required</span> : null}
+                <span className={`${error ? styles.labelError : ''}`}>This field is required</span>
             </div>
             <input ref={ref} id={inputId} onChange={onChangeHandler} {...commonInputProps} />
         </div>

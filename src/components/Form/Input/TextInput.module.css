@@ -11,9 +11,22 @@
     transition: border-color 0.5s ease-in-out;
 }
 
-.error > input {
+.containerError > input {
     outline-color: var(--strawberry-red);
     border-color: var(--strawberry-red);
+    animation: showErrorBorder 2s ease-in-out forwards;
+}
+
+@keyframes showErrorBorder {
+    0% {
+        outline-color: var(--strawberry-red);
+        border-color: var(--strawberry-red);
+    }
+
+    100% {
+        outline-color: var(--strawberry-red);
+        border-color: var(--strawberry-red);
+    }
 }
 
 .container > input:hover {
@@ -38,4 +51,23 @@
 .label-container > span {
     color: var(--strawberry-red);
     font-size: calc(14rem / 16);
+    opacity: 0;
+}
+
+.label-container > span.labelError {
+    animation: showUp 8s ease-in-out forwards;
+}
+
+@keyframes showUp {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+    }
 }
