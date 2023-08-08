@@ -1,20 +1,29 @@
 .plan-container {
     padding: 10px;
-    outline: 1px solid hsl(240, 3%, 89%);
+    border: 1px solid hsl(240, 3%, 89%);
+    outline: none;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     column-gap: 20px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
 }
 
 .plan-container:hover {
-    outline-color: hsl(246, 31%, 56%);
     cursor: pointer;
 }
 
+.plan-container:focus, .plan-container:hover {
+    border-color: hsl(246, 31%, 56%);
+    outline: none;
+}
+
 .plan-container.selected {
-    background-color: hsl(230, 75%, 98%);
-    outline-color: hsl(246, 31%, 56%);
+    border-color: hsl(246, 31%, 56%);
+    background-color: #eff0f5;
 }
 
 .icon {
@@ -23,4 +32,25 @@
 }
 
 .plan-description {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+.plan-description > h3 {
+    text-align: left;
+    color: var(--marine-blue);
+    font-weight: var(--medium-font);
+}
+
+.plan-description > span.billingTime {
+    text-align: left;
+    color: var(--cool-gray);
+}
+
+.plan-description > span.freeTear {
+    text-align: left;
+    color: var(--marine-blue);
+    font-weight: var(--small-font);
+    font-size: 12px;
 }
