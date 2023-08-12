@@ -1,0 +1,65 @@
+.addon-container {
+    padding: 10px;
+    border: 1px solid hsl(240, 3%, 89%);
+    outline: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.addon-container:hover {
+    cursor: pointer;
+}
+
+.addon-container:focus,
+.addon-container:hover {
+    border-color: hsl(246, 31%, 56%);
+    outline: none;
+}
+
+.addon-container.selected {
+    border-color: var(--purplish-blue);
+    background-color: #eff0f5;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    outline: 1px solid hsl(240, 3%, 89%);
+    object-fit: contain;
+    padding: 4px;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+}
+
+.addon-container.selected .icon {
+    background-color: var(--purplish-blue);
+}
+
+.addon-description {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+.addon-description > h3 {
+    text-align: left;
+    color: var(--marine-blue);
+    font-weight: var(--medium-font);
+}
+
+.addon-description > span.description {
+    text-align: left;
+    color: var(--cool-gray);
+}
+
+.addon-container .addon-billingTime {
+    font-size: 12px;
+    color: #857ec2;
+    margin-left: auto;
+}

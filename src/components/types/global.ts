@@ -9,4 +9,16 @@ interface PlanModel {
     freeMonthPeriod: string;
 }
 
-export type { BillingPlanPeriod, PlanModel, PlanTypes, Step };
+type AddOnTypes = 'online-service' | 'larger-storage' | 'customizable-profile';
+
+interface AddOn {
+    type: AddOnTypes;
+    addOn: string;
+    description: string;
+    monthlyBilling: string;
+    yearlyBilling: string;
+}
+
+type OrNull<T> = T | null;
+
+export type { BillingPlanPeriod, PlanModel, PlanTypes, Step, AddOnTypes, AddOn, OrNull };
