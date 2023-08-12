@@ -1,11 +1,11 @@
-import { useStep } from '../../context/step/hooks';
+import { useGetStep } from '../../context/step/hooks';
 import Step from './Step/Step';
 import styles from './StepsSummary.module.css';
 
 const STEPS = [1, 2, 3, 4];
 
 const StepsSummary = () => {
-    const currentStep = useStep();
+    const currentStep = useGetStep();
     return (
         <div className={styles.steps}>
             {STEPS.map((stepNumber) => (

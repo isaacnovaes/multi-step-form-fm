@@ -1,25 +1,24 @@
 import { createContext, useReducer } from 'react';
-import type { BillingPlanPeriod, PlanModel } from '../../components/types/global';
+import type { BillingPlanPeriod, OrNull, PlanModel } from '../../components/types/global';
+import { PLANS } from '../../constants/global';
 
 export interface SelectedPlan {
     plan: PlanModel;
     billingTime: BillingPlanPeriod;
 }
 
-type SelectedPlanState = SelectedPlan | null;
+type SelectedPlanState = SelectedPlan;
 
-const INITIAL_STATE: SelectedPlanState = null;
+const INITIAL_STATE: SelectedPlanState = { plan: PLANS[0], billingTime: 'monthly' };
 
 type SelectedPlanDispatchAction = {
     type: 'add-plan';
     selectedPlan: SelectedPlan;
 };
 
-const SelectedPlanContext = createContext<SelectedPlanState>(INITIAL_STATE);
-const SelectedPlanDispatchContext = createContext<React.Dispatch<SelectedPlanDispatchAction>>(
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    () => {}
-);
+const SelectedPlanContext = createContext<OrNull<SelectedPlanState>>(null);
+const SelectedPlanDispatchContext =
+    createContext<OrNull<React.Dispatch<SelectedPlanDispatchAction>>>(null);
 
 const selectedPlanReducer = (state: SelectedPlanState, action: SelectedPlanDispatchAction) => {
     switch (action.type) {
@@ -27,7 +26,9 @@ const selectedPlanReducer = (state: SelectedPlanState, action: SelectedPlanDispa
             return action.selectedPlan;
         }
         default:
-            new Error(`Something went wrong. This action type is not handled by StepContext.`);
+            throw new Error(
+                `Something went wrong. This action type is not handled by SelectedPlanDispatchContext.`
+            );
             return state;
     }
 };
@@ -48,4 +49,3 @@ const SelectedPlanProvider = (props: Props) => {
 };
 
 export { SelectedPlanContext, SelectedPlanDispatchContext, SelectedPlanProvider };
-

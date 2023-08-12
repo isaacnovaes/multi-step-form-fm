@@ -1,11 +1,11 @@
-import { useStep } from '../../../context/step/hooks';
+import { useGetStep } from '../../../context/step/hooks';
 import styles from './FormFooter.module.css';
 
 const FormFooter = (props: {
     onGoBackHandler?: React.MouseEventHandler<HTMLButtonElement>;
     onSubmit: React.MouseEventHandler<HTMLButtonElement>;
 }) => {
-    const currentStep = useStep();
+    const currentStep = useGetStep();
 
     const onSubmitClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
         e.preventDefault();

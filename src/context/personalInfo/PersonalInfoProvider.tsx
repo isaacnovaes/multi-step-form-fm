@@ -1,4 +1,5 @@
 import { createContext, useReducer } from 'react';
+import type { OrNull } from '../../components/types/global';
 
 export interface PersonalInfoState {
     name: string;
@@ -22,11 +23,9 @@ type PersonalInfoDispatchAction =
           newPhone: string;
       };
 
-const PersonalInfoContext = createContext<PersonalInfoState>(INITIAL_STATE);
-const PersonalInfoDispatchContext = createContext<React.Dispatch<PersonalInfoDispatchAction>>(
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    () => {}
-);
+const PersonalInfoContext = createContext<OrNull<PersonalInfoState>>(null);
+const PersonalInfoDispatchContext =
+    createContext<OrNull<React.Dispatch<PersonalInfoDispatchAction>>>(null);
 
 const personalInfoReducer = (state: PersonalInfoState, action: PersonalInfoDispatchAction) => {
     switch (action.type) {
@@ -40,7 +39,9 @@ const personalInfoReducer = (state: PersonalInfoState, action: PersonalInfoDispa
             return { ...state, phone: action.newPhone };
         }
         default:
-            new Error(`Something went wrong. This action type is not handled by StepContext.`);
+            throw new Error(
+                `Something went wrong. This action type is not handled by PersonalInfoDispatchContext.`
+            );
             return state;
     }
 };
@@ -60,4 +61,4 @@ const PersonalInfoProvider = (props: Props) => {
     );
 };
 
-export { PersonalInfoProvider, PersonalInfoContext, PersonalInfoDispatchContext };
+export { PersonalInfoContext, PersonalInfoDispatchContext, PersonalInfoProvider };

@@ -1,10 +1,11 @@
 import { createContext, useReducer } from 'react';
-import type { Step } from '../../components/types/global';
+import type { OrNull, Step } from '../../components/types/global';
 import { FINAL_STEP, INITIAL_STEP } from '../../constants/global';
 
 const isStep = (number: number): number is Step => {
     return number >= INITIAL_STEP && number <= FINAL_STEP;
 };
+
 type StepDispatchAction =
     | {
           type: 'go-forward';
@@ -12,9 +13,8 @@ type StepDispatchAction =
     | { type: 'go-backwards' }
     | { type: 'go-to'; step: Step };
 
-const StepContext = createContext<Step>(INITIAL_STEP);
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const StepDispatchContext = createContext<React.Dispatch<StepDispatchAction>>(() => {});
+const StepContext = createContext<OrNull<Step>>(null);
+const StepDispatchContext = createContext<OrNull<React.Dispatch<StepDispatchAction>>>(null);
 
 const stepReducer = (step: Step, action: StepDispatchAction): Step => {
     switch (action.type) {
@@ -36,7 +36,9 @@ const stepReducer = (step: Step, action: StepDispatchAction): Step => {
             return action.step;
         }
         default:
-            new Error(`Something went wrong. This action type is not handled by StepContext.`);
+            throw new Error(
+                `Something went wrong. This action type is not handled by StepContext.`
+            );
             return step;
     }
 };

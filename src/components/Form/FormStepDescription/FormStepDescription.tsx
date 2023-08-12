@@ -1,4 +1,4 @@
-import { useStep } from '../../../context/step/hooks';
+import { useGetStep } from '../../../context/step/hooks';
 import styles from './FormStepDescription.module.css';
 
 const STEPS_STATIC_DATA = [
@@ -21,7 +21,7 @@ const STEPS_STATIC_DATA = [
 ];
 
 const FormStepDescription = () => {
-    const currentStep = useStep();
+    const currentStep = useGetStep();
     const stepDescription = STEPS_STATIC_DATA[currentStep - 1];
 
     return (

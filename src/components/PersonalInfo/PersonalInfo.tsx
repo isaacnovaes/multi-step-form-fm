@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import type { PersonalInfoState } from '../../context/personalInfo/PersonalInfoProvider';
-import { usePersonalInfo, usePersonalInfoDispatch } from '../../context/personalInfo/hooks';
+import { useGetPersonalInfo, usePersonalInfoDispatch } from '../../context/personalInfo/hooks';
 import { useStepDispatch } from '../../context/step/hooks';
 import FormFooter from '../Form/FormFooter/FormFooter';
 import TextInput from '../Form/Input/TextInput';
@@ -8,7 +8,7 @@ import { validateEmail, validateTelephone } from '../Form/form-helpers';
 import styles from './PersonalInfo.module.css';
 
 const PersonalInfo = () => {
-    const { name, address, phone } = usePersonalInfo();
+    const { name, address, phone } = useGetPersonalInfo();
     const personalInfoDispatch = usePersonalInfoDispatch();
     const stepDispatch = useStepDispatch();
     const [inputsError, setInputsError] = useState<Record<keyof PersonalInfoState, boolean>>({
@@ -44,17 +44,17 @@ const PersonalInfo = () => {
         [personalInfoDispatch]
     );
 
-    const onNextStepHandler: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    const onNextStepHandler: React.MouseEventHandler<HTMLButtonElement> = () => {
         const errors: typeof inputsError = { name: false, address: false, phone: false };
 
         errors.name = name === '';
         errors.address = !validateEmail(address);
         errors.phone = !validateTelephone(phone);
 
-        if (errors.name || errors.address || errors.phone) {
-            setInputsError(errors);
-            return;
-        }
+        // if (errors.name || errors.address || errors.phone) {
+        //     setInputsError(errors);
+        //     return;
+        // }
 
         stepDispatch({ type: 'go-forward' });
     };
