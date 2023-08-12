@@ -16,7 +16,8 @@
     cursor: pointer;
 }
 
-.plan-container:focus, .plan-container:hover {
+.plan-container:focus,
+.plan-container:hover {
     border-color: hsl(246, 31%, 56%);
     outline: none;
 }

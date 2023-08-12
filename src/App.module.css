@@ -1,4 +1,4 @@
 .global-container {
     height: 100vh;
-    background-color: hsl(215, 46%, 93%);
+    background-color: hsl(215deg, 46%, 93%);
 }
