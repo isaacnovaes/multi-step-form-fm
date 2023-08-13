@@ -1,0 +1,87 @@
+.order-summary-container {
+    margin-top: 20px;
+}
+
+.order {
+    padding: 20px 15px;
+    background-color: #f7f9fe;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.order-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.type > div,
+.planValue {
+    color: var(--marine-blue);
+    font-weight: 600;
+    font-size: 15px;
+    text-align: left;
+}
+
+.type > button {
+    color: var(--cool-gray);
+    text-decoration: underline;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.type > button:hover {
+    color: #3546f9;
+    cursor: pointer;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--light-gray);
+}
+
+.addons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.addon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addon > span:first-of-type {
+    color: var(--cool-gray);
+    font-size: 15px;
+}
+
+.addon > span:nth-of-type(2) {
+    color: var(--marine-blue);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.totalContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 15px;
+}
+
+.totalContainer > div:first-of-type {
+    color: var(--cool-gray);
+    font-size: 15px;
+}
+
+.totalContainer > div:nth-of-type(2) {
+    color: #3b3db1;
+    font-weight: 600;
+    font-size: 15px;
+}

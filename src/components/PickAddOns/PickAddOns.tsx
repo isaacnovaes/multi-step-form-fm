@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ADDONS } from '../../constants/global';
-import { useSelectedAddonsDispatch } from '../../context/addon/hooks';
+import { useGetSelectedAddons, useSelectedAddonsDispatch } from '../../context/addon/hooks';
 import { useStepDispatch } from '../../context/step/hooks';
 import FormFooter from '../Form/FormFooter/FormFooter';
 import type { AddOnTypes } from '../types/global';
@@ -8,7 +8,11 @@ import AddOn from './AddOn/AddOn';
 import styles from './PickAddOns.module.css';
 
 const PickAddOns = () => {
-    const [selectedAddOns, setSelectedAddOns] = useState<AddOnTypes[]>([]);
+    const previousAddons = useGetSelectedAddons();
+    const [selectedAddOnsType, setSelectedAddOnsType] = useState<AddOnTypes[]>(
+        previousAddons.map((ad) => ad.type)
+    );
+
     const addonsDispatch = useSelectedAddonsDispatch();
 
     const stepDispatch = useStepDispatch();
@@ -16,7 +20,7 @@ const PickAddOns = () => {
     const onNextStepHandler: React.MouseEventHandler<HTMLButtonElement> = () => {
         addonsDispatch({
             type: 'add-addon',
-            addons: ADDONS.filter((ado) => selectedAddOns.includes(ado.type)),
+            addons: ADDONS.filter((ado) => selectedAddOnsType.includes(ado.type)),
         });
         stepDispatch({ type: 'go-forward' });
     };
@@ -24,7 +28,7 @@ const PickAddOns = () => {
     return (
         <div className={styles.addonsContainer}>
             {ADDONS.map((addOn) => {
-                const isSelected = selectedAddOns.includes(addOn.type);
+                const isSelected = selectedAddOnsType.includes(addOn.type);
                 return (
                     <AddOn
                         key={addOn.type}
@@ -32,10 +36,10 @@ const PickAddOns = () => {
                         selected={isSelected}
                         onClick={() => {
                             const newAddOns: AddOnTypes[] = isSelected
-                                ? selectedAddOns.filter((sdo) => sdo !== addOn.type)
-                                : [...selectedAddOns, addOn.type];
+                                ? selectedAddOnsType.filter((sdo) => sdo !== addOn.type)
+                                : [...selectedAddOnsType, addOn.type];
 
-                            setSelectedAddOns(newAddOns);
+                            setSelectedAddOnsType(newAddOns);
                         }}
                     />
                 );
