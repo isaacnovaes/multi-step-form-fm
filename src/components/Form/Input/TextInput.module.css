@@ -71,3 +71,14 @@
         opacity: 0;
     }
 }
+
+@media screen and (min-width: 1000px) {
+    .container > input {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .label-container {
+        margin-bottom: 10px;
+    }
+}

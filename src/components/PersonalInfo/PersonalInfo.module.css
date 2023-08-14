@@ -2,5 +2,11 @@
     display: flex;
     flex-direction: column;
     margin: 17px 0;
-    row-gap: calc(7rem / 16);
+    row-gap: calc(17rem / 16);
+}
+
+@media screen and (min-width: 1000px) {
+    .personal-info-container {
+        row-gap: 20px;
+    }
 }

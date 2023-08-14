@@ -7,3 +7,18 @@
     background-image: url('../../assets/images/bg-sidebar-mobile.svg');
     background-size: cover;
 }
+
+@media screen and (min-width: 1000px) {
+    .steps {
+        padding-top: 0;
+        width: 455px;
+        height: 660px;
+        background-image: url('../../assets/images/bg-sidebar-desktop.svg');
+        align-self: flex-start;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: 5%;
+        padding: 40px;
+    }
+}

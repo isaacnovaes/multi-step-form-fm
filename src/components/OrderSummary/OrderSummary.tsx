@@ -37,7 +37,7 @@ const OrderSummary = () => {
                             {isMonthly ? `$${plan.monthlyBilling}/mo` : `$${plan.yearlyBilling}/yr`}
                         </div>
                     </div>
-                    <div className={styles.divider} />
+                    {addons.length ? <div className={styles.divider} /> : null}
                     <div className={styles.addons}>
                         {addons.map((ad) => (
                             <div key={ad.type} className={styles.addon}>

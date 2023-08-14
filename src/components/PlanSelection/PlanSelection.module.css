@@ -7,3 +7,12 @@
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
+@media screen and (min-width: 1000px) {
+    .planSelectionContainer {
+        flex-direction: row;
+        column-gap: 15px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+}

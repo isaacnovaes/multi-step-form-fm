@@ -6,3 +6,14 @@
     background-color: var(--white);
     border-radius: calc(10rem / 16);
 }
+
+@media screen and (min-width: 1000px) {
+    .form-container {
+        margin-top: 0;
+        padding: 0 50px;
+        height: 100%;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+    }
+}

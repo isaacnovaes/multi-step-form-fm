@@ -26,31 +26,33 @@ const PickAddOns = () => {
     };
 
     return (
-        <div className={styles.addonsContainer}>
-            {ADDONS.map((addOn) => {
-                const isSelected = selectedAddOnsType.includes(addOn.type);
-                return (
-                    <AddOn
-                        key={addOn.type}
-                        {...addOn}
-                        selected={isSelected}
-                        onClick={() => {
-                            const newAddOns: AddOnTypes[] = isSelected
-                                ? selectedAddOnsType.filter((sdo) => sdo !== addOn.type)
-                                : [...selectedAddOnsType, addOn.type];
+        <>
+            <div className={styles.addonsContainer}>
+                {ADDONS.map((addOn) => {
+                    const isSelected = selectedAddOnsType.includes(addOn.type);
+                    return (
+                        <AddOn
+                            key={addOn.type}
+                            {...addOn}
+                            selected={isSelected}
+                            onClick={() => {
+                                const newAddOns: AddOnTypes[] = isSelected
+                                    ? selectedAddOnsType.filter((sdo) => sdo !== addOn.type)
+                                    : [...selectedAddOnsType, addOn.type];
 
-                            setSelectedAddOnsType(newAddOns);
-                        }}
-                    />
-                );
-            })}
+                                setSelectedAddOnsType(newAddOns);
+                            }}
+                        />
+                    );
+                })}
+            </div>
             <FormFooter
                 onSubmit={onNextStepHandler}
                 onGoBackHandler={() => {
                     stepDispatch({ type: 'go-backwards' });
                 }}
             />
-        </div>
+        </>
     );
 };
 export default PickAddOns;

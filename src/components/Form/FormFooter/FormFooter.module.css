@@ -48,3 +48,13 @@
 .back-button.show {
     visibility: visible;
 }
+
+@media screen and (min-width: 1000px) {
+    .form-navigation {
+        position: static;
+        inset: 0;
+        margin-top: auto;
+        height: auto;
+        padding: 0;
+    }
+}
