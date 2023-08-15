@@ -11,6 +11,7 @@ const STEP_DESCRIPTION: Record<Step, Record<'head' | 'info', string>> = {
     '2': { head: 'STEP 2', info: 'SELECT PLAN' },
     '3': { head: 'STEP 3', info: 'ADD-ONS' },
     '4': { head: 'STEP 4', info: 'SUMMARY' },
+    '5': { head: '', info: '' },
 };
 
 const StepInformation = ({ selected = false, step }: Props) => {
