@@ -1,6 +1,6 @@
 type BillingPlanPeriod = 'monthly' | 'yearly';
 type PlanTypes = 'arcade' | 'advanced' | 'pro';
-type Step = 1 | 2 | 3 | 4;
+type Step = 1 | 2 | 3 | 4 | 5;
 
 interface PlanModel {
     type: PlanTypes;

@@ -51,10 +51,10 @@ const PersonalInfo = () => {
         errors.address = !validateEmail(address);
         errors.phone = !validateTelephone(phone);
 
-        // if (errors.name || errors.address || errors.phone) {
-        //     setInputsError(errors);
-        //     return;
-        // }
+        if (errors.name || errors.address || errors.phone) {
+            setInputsError(errors);
+            return;
+        }
 
         stepDispatch({ type: 'go-forward' });
     };

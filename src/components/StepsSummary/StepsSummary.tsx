@@ -7,10 +7,15 @@ const STEPS: StepUnit[] = [1, 2, 3, 4];
 
 const StepsSummary = () => {
     const currentStep = useGetStep();
+    const isFinalStep = currentStep === 5;
     return (
         <div className={styles.steps}>
             {STEPS.map((stepNumber) => (
-                <Step key={stepNumber} step={stepNumber} selected={stepNumber === currentStep} />
+                <Step
+                    key={stepNumber}
+                    step={stepNumber}
+                    selected={stepNumber === currentStep || (stepNumber === 4 && isFinalStep)}
+                />
             ))}
         </div>
     );

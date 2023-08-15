@@ -57,7 +57,9 @@ const OrderSummary = () => {
                 </div>
             </div>
             <FormFooter
-                onSubmit={() => {}}
+                onSubmit={() => {
+                    stepDispatch({ type: 'go-forward' });
+                }}
                 onGoBackHandler={() => {
                     stepDispatch({ type: 'go-backwards' });
                 }}

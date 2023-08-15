@@ -22,7 +22,10 @@ const STEPS_STATIC_DATA = [
 
 const FormStepDescription = () => {
     const currentStep = useGetStep();
+    const isFinalStep = currentStep === 5;
     const stepDescription = STEPS_STATIC_DATA[currentStep - 1];
+
+    if (isFinalStep) return null;
 
     return (
         <div className={styles.container}>

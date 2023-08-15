@@ -1,7 +1,7 @@
 import type { AddOn, PlanModel, Step } from '../components/types/global';
 
 const INITIAL_STEP: Step = 1;
-const FINAL_STEP: Step = 4;
+const FINAL_STEP: Step = 5;
 
 const PLANS: PlanModel[] = [
     {

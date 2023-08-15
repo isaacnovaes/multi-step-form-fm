@@ -47,10 +47,6 @@ html:focus-within {
     font-weight: var(--small-font);
 }
 
-body {
-    background-color: var(--light-blue);
-}
-
 ul {
     list-style-type: none;
 }
@@ -92,17 +88,5 @@ button:focus-visible {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    body {
-        background-color: #e4ecf5;
-    }
-
-    #root {
-        height: 100vh;
-        display: grid;
-        place-items: center;
     }
 }
